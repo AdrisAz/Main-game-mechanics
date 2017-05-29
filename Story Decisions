@@ -8,11 +8,6 @@ public class MainMenu {
 		status[0]="Health";
 		status[1]="Supplies";
 		status[2]="Weapons";
-		final int Outside_Sweep_Stomp=1;
-		final int Decap=2;
-		Random rand=new Random();
-		int clerk=0;
-		int userAnswer=0;
 		String choice="";
 		String answer="";
 		Scanner input=new Scanner(System.in);
@@ -38,24 +33,32 @@ public class MainMenu {
 			}
 			else if (choice.toUpperCase().equals("C"))
 			{
-				System.out.print("You leave your truck and follow the road away from the zombies. You walk for an hour before you can see the town your friend lives in . As you look at the town you can’t see anyone anywhere in the town. Do you:\n A)\nB) ");
+				System.out.print("You leave your truck and follow the road away from the zombies. You walk for an hour before you can see the town your friend lives in . As you look at the town you can’t see anyone anywhere in the town. Do you:\n A)Keep walking and pass the town you friend lives in\nB)Walk into the town and look for your friend  ");
+				choice=input.next();
+				if (choice.toUpperCase().equals("A"))
+				{
+					System.out.print("");
+				
+				}
+				else if (choice.toUpperCase().equals("B"))
+				{
+					System.out.print("You walk into the town looking down each street seeing if you can see anyone in the town. The town seems completely empty with not a sign of life anywhere. You walk to your friends house to see the door and windows boarded up. You kick open the door and walk into the house.  Inside you see your best friend has been bit by a zombie and he is coming at you. You panic and don’t know what to do. Do you: \nA)Pick up the chair beside you and hit him with it.\nB)Freeze up. Stand still and hope he does not see you. ");
+					choice=input.next();
+					if (choice.toUpperCase().equals("A"))
+					{
+						System.out.print("You grab the chair and hit him as hard as you can, knocking him to the ground. You notice that even though he is on the ground he is still trying to come at you and you have no choice but to kill your best friend.");
+					}
+					else if (choice.toUpperCase().equals("B"))
+					{
+						System.out.print("You stand still hoping that he will go around you but all he sees you as is food and he comes up to you and bites you turning you into a zombie. YOU DIE ");
+						System.out.println("Do you want to play again (y\n)?");
+						answer=input.next();
+					}
+				}
 			}
 			else if (choice.toUpperCase().equals("D"))
 			{
-				System.out.print("You continue to drive for about 10 minutes when you see an seemingly abbandoned repair shop. You get out of your truck and walk in. You look around and find what you need to fix your truck. You start to leave when a voice coming from behind the counter asks 'Where do you think you're going?'You turn around and you see a man with a long beard and wide eyes. He tells that if you want the parts for your truck, you must guess a number between 1 and 20. If you guess wrong he kills you and steals all your stuff. Guess a number ");
-				userAnswer=input.nextInt();
-				clerk=rand.nextInt(20)+1;
-				System.out.println("The clerk's number was "+clerk); 
-				if (userAnswer==clerk)
-				{
-					System.out.println("The clerk gives you the parts and you leave");
-				}
-				else
-				{
-					System.out.println("He kills you and steals your stuff");
-					System.out.println("Do you want to play again (y/n)?");
-					answer=input.next();
-				}
+				System.out.print("");
 			}
 		}
 		else if (choice.toUpperCase().equals("B"))
