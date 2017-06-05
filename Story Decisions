@@ -1,6 +1,5 @@
 import java.util.*;//import multi-class
-public class MainMenu {
-	
+public class MainMenu {	
 static Scanner input=new Scanner(System.in);
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -11,7 +10,6 @@ static Scanner input=new Scanner(System.in);
 		status[1]="Supplies";
 		status[2]="Weapons";
 		String choice="";
-		String answer="";
 		do
 		{
 		System.out.print("You are on a truck going to your best friend, Marty B’s, house  when you look out your driver's window to see something weird. \nYou stop your truck to go out and see what it is and you notice that it is a humanoid figure in the woods. \nYou go to see if he is alright when you notice a foul smell and then see his literal dead stare looking right into your eyes, you see that has a large piece of his shoulder bitten off with a disgusting amount of exposed skin. \nYou ask him what happened but he only answers with a moan. \nYou continue to stare back at the figure, then out of nowhere he attacks. He starts running at you with that same dead stare locked onto you as his mouth is wide open. \nYou run as fast as you can back to your truck, lock the door and speed away with no hesitation. \nWhen you are in the truck you keep asking yourself what that guy was doing, then you realize that even though you never thought the day would come, you realize that the world has gone into a ZOMBIE APOCALYPSE. \nYou keep driving to Marty B’s house with just being 10 minutes and you see that the road is blocked by hundreds of humanoid figures similarly to the one that tried to eat you earlier (insert image). \nYou step on the brakes before getting any closer and…");
@@ -28,8 +26,7 @@ static Scanner input=new Scanner(System.in);
 			else if (choice.toUpperCase().equals("B"))
 			{
 				System.out.print("You decide to lock your doors and you figure out that you have enough food and water for only 2 days. 2 days pass and you stay in one spot but the only thing that is coming towards you is zombies and not help. You have ran out of food and water but at this point you are completely surrounded by zombies and you realize you no matter what you do you won't make it out. YOU DIE");
-				System.out.println("Do you want to play again (y\n)?"); // asks user if they want to retry, if y, loops back to main menu, if n, program terminated
-				answer=input.next();
+				quit();
 			}
 			else if (choice.toUpperCase().equals("C"))
 			{
@@ -51,8 +48,8 @@ static Scanner input=new Scanner(System.in);
 					else if (choice.toUpperCase().equals("B"))
 					{
 						System.out.print("You stand still hoping that he will go around you but all he sees you as is food and he comes up to you and bites you turning you into a zombie. YOU DIE ");
-						System.out.println("Do you want to play again (y/n)?"); 
-						answer=input.next();
+						//call quit method
+						quit();
 					}
 				}
 			}
@@ -63,7 +60,19 @@ static Scanner input=new Scanner(System.in);
 		}
 		else if (choice.toUpperCase().equals("B"))
 		{
-			System.out.print("If you choose B, you turn your truck around but as you do the zombies notice the movement and sound of your truck. You look in your rear view mirror and you start to see the herd of zombies coming towards you. You hit the gas as hard as you can and drive away from the zombies.");
+			System.out.print("If you choose B, you turn your truck around but as you do the zombies notice the movement and sound of your truck. You look in your rear view mirror and you start to see the herd of zombies coming towards you. You hit the gas as hard as you can and drive away from the zombies. As you are driving you turn onto a road that should lead you to Marty’s house. Well you are driving you start to see zombies coming out of the trees. You look up ahead and see some zombies on the rad and more are walking towards it. You notice that soon the road will be completely covered by zombies. Do you:\nA)Speed up and try to get out before you get trapped \nB)You stomp on the gas as hard as you can hitting zombies as you try to get out.\nC)Turn around and try to get out of the herd ");
+			if (choice.toUpperCase().equals("A"))
+			{
+				System.out.print("");
+			}
+			else if (choice.toUpperCase().equals("B"))
+			{
+				System.out.print("");
+			}
+			else if (choice.toUpperCase().equals("C"))
+			{
+				System.out.print("");
+			}
 		}
 		else if (choice.toUpperCase().equals("C"))
 		{
@@ -87,14 +96,12 @@ static Scanner input=new Scanner(System.in);
 				else if (choice.toUpperCase().equals("B"))
 				{
 					System.out.print("You run past the cottage and try to outrun the zombies even though you are bleeding from your wounds. You keep running but the pain in your leg is to great to keep moving on in. you end up collapsing to the ground in pain and get overtaken by zombies. YOU DIE");
-					System.out.println("Do you want to play again (y/n)?"); 
-					answer=input.next();
+					quit();
 				}
 				else if (choice.toUpperCase().equals("C"))
 				{
 					System.out.print("You run to the window to try and see in well the zombies are still after you and you see that the house looks like it's abandoned so you start walking to the door. As you are going to the door a zombie crawls out from under the cottage knocking you to the ground and you hit your head off of a rock. YOU DIE");
-					System.out.println("Do you want to play again (y/n)?"); 
-					answer=input.next();
+					quit();
 				}
 			}
 			else if (choice.toUpperCase().equals("B")) 
@@ -104,8 +111,7 @@ static Scanner input=new Scanner(System.in);
 			else if (choice.toUpperCase().equals("C")) 
 			{
 				System.out.print("You get ready to fight as the zombies are coming closer and as the first zombie gets to you you hit it as hard as you can with the trap. The trap gets stuck in the zombie and you can't get it out to fight. You leave it and start fighting with your hands throwing zombies to the ground as they come. As you are fighting you notice that the zombies have surrounded you and there is no way out.You hit one zombie but another tackles you to the ground and then they are all on top of you and they start eating you alive. YOU DIE");
-				System.out.println("Do you want to play again (y/n)?"); 
-				answer=input.next();
+				quit();
 			}
 		}
 		else if (choice.toUpperCase().equals("D"))
@@ -122,23 +128,37 @@ static Scanner input=new Scanner(System.in);
 				if (choice.toUpperCase().equals("A"))
 				{
 					System.out.println("YOU DIE");
-					System.out.println("Do you want to play again (y/n)?"); 
-					answer=input.next();
+					quit();
 				}
 				else if (choice.toUpperCase().equals("B"))
 				{
 					System.out.println("You run as fast as you can at the hurd dodging zombies left and right. You are in the middle of the hurd and look for a way out but you are surrounded by zombies you shoot one but as you do another one bites you YOU DIE");
-					System.out.println("Do you want to play again (y/n)?"); answer=input.next();
+					quit();
 				}
 			}
 			else if (choice.toUpperCase().equals("C"))
 			{
 				System.out.println("You grab the broomstick and start moving towards the herd of zombies. You kill the first one that comes at you and then the second. Then you start running through the zombies killing as many as you can as you go through but the stick ends up breaking as you are going and you are surrounded by zombies. You look around for help but you don't see anyone or anything and you realize that it is over. YOU DIE.");
-				System.out.println("Do you want to play again (y/n)?"); 
-				answer=input.next();
+				quit();
 			}
 		}
 		
-		}while(answer.toLowerCase().equals("y"));// loop continues as long as user enters y
+		}while(choice.toUpperCase().equals("A")||(choice.toUpperCase().equals("B"))||(choice.toUpperCase().equals("C"))||(choice.toUpperCase().equals("D")));// loop continues as long as user enters y
+	}
+	//declare quit method
+	public static void quit()
+	{String answer="";
+	System.out.println("Do you want to play again (y/n)?"); 
+	answer=input.next();
+	if (answer.toLowerCase().equals("y"))
+	{
+		return;
+	}
+	else if (answer.toLowerCase().equals("n"))
+	{
+		System.out.println("Goodbye");
+		System.exit(0);
+	}
+	
 	}
 }
