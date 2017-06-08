@@ -1,14 +1,18 @@
+/*TO ADD
+While Loops
+For Loops
+Formatting functions (Decimal Format, Number Format)
+Random number function
+Math class functions
+One-Dimensional Arrays
+Two-Dimensional Arrays (optional)
+ */
 import java.util.*;//import multi-class
 public class MainMenu {	
 static Scanner input=new Scanner(System.in);
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// declare variables/arrays
-		int statusLevel[]=new int[3];
-		String status[]=new String[3];
-		status[0]="Health";
-		status[1]="Supplies";
-		status[2]="Weapons";
+		// declare variables
 		String choice="";
 		do
 		{
@@ -21,7 +25,9 @@ static Scanner input=new Scanner(System.in);
 			choice=input.next();
 			if (choice.toUpperCase().equals("A"))
 			{
-				System.out.print("");
+				System.out.print("You keep driving for as long as you can towards Marty's house. As you are driving you notice that your gas tank is also leaking so you stomp on the gas so you can use as much gas as you can well it is in your tank. As you hit the gas the dangling exhaust pipe starts to spark and catches the dripping ags on fire. The flames are starting to cover the car and before you can do anything the car blows up. YOU DIE");
+				//call quit method
+				quit();
 			}
 			else if (choice.toUpperCase().equals("B"))
 			{
@@ -34,8 +40,15 @@ static Scanner input=new Scanner(System.in);
 				choice=input.next();
 				if (choice.toUpperCase().equals("A"))
 				{
-					System.out.print("");
-				
+					System.out.print("You walk past the town to search for your friends Marty B. as you are walking you notice that there is a zombie on the road infront out you. As you get closer to the zombie you notice that it is your best friend Marty B. he notices you and starts to come towards you and you have to make a choice. Do you:\nA)Kill your friend because he has turned into a zombie\nB)");
+					if (choice.toUpperCase().equals("A"))
+					{
+						System.out.print("");
+					}
+					else if (choice.toUpperCase().equals("B"))
+					{
+						System.out.print("");
+					}
 				}
 				else if (choice.toUpperCase().equals("B"))
 				{
@@ -48,14 +61,13 @@ static Scanner input=new Scanner(System.in);
 					else if (choice.toUpperCase().equals("B"))
 					{
 						System.out.print("You stand still hoping that he will go around you but all he sees you as is food and he comes up to you and bites you turning you into a zombie. YOU DIE ");
-						//call quit method
 						quit();
 					}
 				}
 			}
 			else if (choice.toUpperCase().equals("D"))
 			{
-				System.out.print("");
+				System.out.print("You get out and look around for parts for your car. As you are looking for parts for your car the herd that you just rove through is walking towards you. You are opening up hoods of cars looking for the parts you need when you see the herd coming you panic and don’t know what to do. Do you:\nA)Run as fast as you can away from the zombies\nB)Get in a car, hide and hope they just pass by");
 			}
 		}
 		else if (choice.toUpperCase().equals("B"))
@@ -63,7 +75,19 @@ static Scanner input=new Scanner(System.in);
 			System.out.print("If you choose B, you turn your truck around but as you do the zombies notice the movement and sound of your truck. You look in your rear view mirror and you start to see the herd of zombies coming towards you. You hit the gas as hard as you can and drive away from the zombies. As you are driving you turn onto a road that should lead you to Marty’s house. Well you are driving you start to see zombies coming out of the trees. You look up ahead and see some zombies on the rad and more are walking towards it. You notice that soon the road will be completely covered by zombies. Do you:\nA)Speed up and try to get out before you get trapped \nB)You stomp on the gas as hard as you can hitting zombies as you try to get out.\nC)Turn around and try to get out of the herd ");
 			if (choice.toUpperCase().equals("A"))
 			{
-				System.out.print("");
+				System.out.print("You stomp on the gas as hard as you can hitting zombies as you try to get out. As you are driving through the zombies you run over a spike and pop one of your tires. You try and keep driving but as you hit zombies your car gets slower and slower and you think you might not make it out. Do you:\nA)Keep trying to drive through by pushing on the gas\nB)Get out now and try and fight your way through the zombies.\nC)Realize that there is no hope and just let the zombies take over");
+				if (choice.toUpperCase().equals("A"))
+				{
+					System.out.print("");
+				}
+				else if (choice.toUpperCase().equals("B"))
+				{
+					System.out.print("");
+				}
+				else if (choice.toUpperCase().equals("C"))
+				{
+					System.out.print("You decide that there is no point in even trying to stay alive anymore and you decide that you want to end your own life. You get out of the car and walk towards the herd so they can end it for you. YOU DIE");
+				}
 			}
 			else if (choice.toUpperCase().equals("B"))
 			{
@@ -143,22 +167,17 @@ static Scanner input=new Scanner(System.in);
 			}
 		}
 		
-		}while(choice.toUpperCase().equals("A")||(choice.toUpperCase().equals("B"))||(choice.toUpperCase().equals("C"))||(choice.toUpperCase().equals("D")));// loop continues as long as user enters y
+		}while(choice.toUpperCase().equals("A")||(choice.toUpperCase().equals("B"))||(choice.toUpperCase().equals("C"))||(choice.toUpperCase().equals("D")));// loop continues as long as user enters A B C or D
 	}
 	//declare quit method
 	public static void quit()
 	{String answer="";
 	System.out.println("Do you want to play again (y/n)?"); 
 	answer=input.next();
-	if (answer.toLowerCase().equals("y"))
-	{
-		return;
-	}
+	if (answer.toLowerCase().equals("y"))//converts choice to lower case
+	{return;/*returns to main method*/}
 	else if (answer.toLowerCase().equals("n"))
-	{
-		System.out.println("Goodbye");
-		System.exit(0);
-	}
-	
-	}
+	{System.out.println("Goodbye");
+	 System.exit(0);/*exits program*/}
+   	}
 }
