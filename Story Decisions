@@ -1,183 +1,438 @@
-/*TO ADD
-While Loops
-For Loops
-Formatting functions (Decimal Format, Number Format)
-Random number function
-Math class functions
-One-Dimensional Arrays
-Two-Dimensional Arrays (optional)
- */
-import java.util.*;//import multi-class
-public class MainMenu {	
-static Scanner input=new Scanner(System.in);
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+
+public class Game {
+	
+	JFrame window;
+	Container con;
+	JPanel titleNamePanel, startButtonPanel, mainTextPanel, choiceButtonPanel, playerPanel, imagePanel, hpPanel, weaponPanel;
+	JLabel titleNameLabel, hpLabel, hpLabelNumber, weaponLabel, weaponLabelName, imageLabel;
+	Font titleFont = new Font("Times New Roman", Font.BOLD, 73);
+	Font normalFont = new Font("Times New Roman", Font.BOLD, 25);
+	Font choiceFont = new Font("Times New Roman", Font.BOLD, 22);
+	JButton startButton, choice1, choice2, choice3, choice4;
+	int playerHP, zombieHP;
+	String weapon, position;
+	ImageIcon image;
+	JTextArea mainTextArea;
+	
+	TitleScreenHandler tsHandler = new TitleScreenHandler();
+	ChoiceHandler choiceHandler = new ChoiceHandler();
+
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// declare variables
-		String choice="";
-		do
-		{
-		System.out.print("You are on a truck going to your best friend, Marty B’s, house  when you look out your driver's window to see something weird. \nYou stop your truck to go out and see what it is and you notice that it is a humanoid figure in the woods. \nYou go to see if he is alright when you notice a foul smell and then see his literal dead stare looking right into your eyes, you see that has a large piece of his shoulder bitten off with a disgusting amount of exposed skin. \nYou ask him what happened but he only answers with a moan. \nYou continue to stare back at the figure, then out of nowhere he attacks. He starts running at you with that same dead stare locked onto you as his mouth is wide open. \nYou run as fast as you can back to your truck, lock the door and speed away with no hesitation. \nWhen you are in the truck you keep asking yourself what that guy was doing, then you realize that even though you never thought the day would come, you realize that the world has gone into a ZOMBIE APOCALYPSE. \nYou keep driving to Marty B’s house with just being 10 minutes and you see that the road is blocked by hundreds of humanoid figures similarly to the one that tried to eat you earlier (insert image). \nYou step on the brakes before getting any closer and…");
-		System.out.println("You have to make a choice now, do you:\nA)Try to drive through the zombies\nB)Turn your truck around and try to find a different route\nC)Get out of your car and try to make it on foot by walking around the big mob\nD)Or try to fight your way out");
-		choice=input.next();
-		if (choice.toUpperCase().equals("A"))//converts choice to upper case
-		{
-			System.out.print("If you choose A, you stomp on the gas peddle as hard as you can and try to bust through the zombies. You manage to get out the other end but they end up ripping out the exhaust pipe and part of the  hood. Do you: \nA)Keep on driving for as long as you can \nB)Hold up in your truck hoping someone comes that can rescue you \nC)Leave the truck and walk on foot \nD)Try and find parts for your truck");
-			choice=input.next();
-			if (choice.toUpperCase().equals("A"))
-			{
-				System.out.print("You keep driving for as long as you can towards Marty's house. As you are driving you notice that your gas tank is also leaking so you stomp on the gas so you can use as much gas as you can well it is in your tank. As you hit the gas the dangling exhaust pipe starts to spark and catches the dripping ags on fire. The flames are starting to cover the car and before you can do anything the car blows up. YOU DIE");
-				//call quit method
-				quit();
-			}
-			else if (choice.toUpperCase().equals("B"))
-			{
-				System.out.print("You decide to lock your doors and you figure out that you have enough food and water for only 2 days. 2 days pass and you stay in one spot but the only thing that is coming towards you is zombies and not help. You have ran out of food and water but at this point you are completely surrounded by zombies and you realize you no matter what you do you won't make it out. YOU DIE");
-				quit();
-			}
-			else if (choice.toUpperCase().equals("C"))
-			{
-				System.out.print("You leave your truck and follow the road away from the zombies. You walk for an hour before you can see the town your friend lives in . As you look at the town you can’t see anyone anywhere in the town. Do you:\n A)Keep walking and pass the town you friend lives in\nB)Walk into the town and look for your friend  ");
-				choice=input.next();
-				if (choice.toUpperCase().equals("A"))
-				{
-					System.out.print("You walk past the town to search for your friends Marty B. as you are walking you notice that there is a zombie on the road infront out you. As you get closer to the zombie you notice that it is your best friend Marty B. he notices you and starts to come towards you and you have to make a choice. Do you:\nA)Kill your friend because he has turned into a zombie\nB)");
-					if (choice.toUpperCase().equals("A"))
-					{
-						System.out.print("");
-					}
-					else if (choice.toUpperCase().equals("B"))
-					{
-						System.out.print("");
-					}
-				}
-				else if (choice.toUpperCase().equals("B"))
-				{
-					System.out.print("You walk into the town looking down each street seeing if you can see anyone in the town. The town seems completely empty with not a sign of life anywhere. You walk to your friends house to see the door and windows boarded up. You kick open the door and walk into the house.  Inside you see your best friend has been bit by a zombie and he is coming at you. You panic and don’t know what to do. Do you: \nA)Pick up the chair beside you and hit him with it.\nB)Freeze up. Stand still and hope he does not see you. ");
-					choice=input.next();
-					if (choice.toUpperCase().equals("A"))
-					{
-						System.out.print("You grab the chair and hit him as hard as you can, knocking him to the ground. You notice that even though he is on the ground he is still trying to come at you and you have no choice but to kill your best friend.");
-					}
-					else if (choice.toUpperCase().equals("B"))
-					{
-						System.out.print("You stand still hoping that he will go around you but all he sees you as is food and he comes up to you and bites you turning you into a zombie. YOU DIE ");
-						quit();
-					}
-				}
-			}
-			else if (choice.toUpperCase().equals("D"))
-			{
-				System.out.print("You get out and look around for parts for your car. As you are looking for parts for your car the herd that you just rove through is walking towards you. You are opening up hoods of cars looking for the parts you need when you see the herd coming you panic and don’t know what to do. Do you:\nA)Run as fast as you can away from the zombies\nB)Get in a car, hide and hope they just pass by");
-			}
-		}
-		else if (choice.toUpperCase().equals("B"))
-		{
-			System.out.print("If you choose B, you turn your truck around but as you do the zombies notice the movement and sound of your truck. You look in your rear view mirror and you start to see the herd of zombies coming towards you. You hit the gas as hard as you can and drive away from the zombies. As you are driving you turn onto a road that should lead you to Marty’s house. Well you are driving you start to see zombies coming out of the trees. You look up ahead and see some zombies on the rad and more are walking towards it. You notice that soon the road will be completely covered by zombies. Do you:\nA)Speed up and try to get out before you get trapped \nB)You stomp on the gas as hard as you can hitting zombies as you try to get out.\nC)Turn around and try to get out of the herd ");
-			if (choice.toUpperCase().equals("A"))
-			{
-				System.out.print("You stomp on the gas as hard as you can hitting zombies as you try to get out. As you are driving through the zombies you run over a spike and pop one of your tires. You try and keep driving but as you hit zombies your car gets slower and slower and you think you might not make it out. Do you:\nA)Keep trying to drive through by pushing on the gas\nB)Get out now and try and fight your way through the zombies.\nC)Realize that there is no hope and just let the zombies take over");
-				if (choice.toUpperCase().equals("A"))
-				{
-					System.out.print("");
-				}
-				else if (choice.toUpperCase().equals("B"))
-				{
-					System.out.print("");
-				}
-				else if (choice.toUpperCase().equals("C"))
-				{
-					System.out.print("You decide that there is no point in even trying to stay alive anymore and you decide that you want to end your own life. You get out of the car and walk towards the herd so they can end it for you. YOU DIE");
-				}
-			}
-			else if (choice.toUpperCase().equals("B"))
-			{
-				System.out.print("");
-			}
-			else if (choice.toUpperCase().equals("C"))
-			{
-				System.out.print("");
-			}
-		}
-		else if (choice.toUpperCase().equals("C"))
-		{
-			System.out.print("If you choose C, you hop out of your car and run to the nearby forest. In the forest you hide behind the trees as you try and make it by the herd without being seen. Well you are running from tree to tree you end up stepping on a bear  trap and scream in pain. You take the the  bear trap off and notice your scream attracts the attention of the nearby zombies and that they are coming towards you. Do you:\nA)Run as fast as you can and try and get away \nB)Climb the nearby tree and hope the zombies don’t see you \nC)Try and fight your way through the zombies with nothing but your bare hands and a bear trap ");
-			choice=input.next();
-			if (choice.toUpperCase().equals("A")) 
-			{
-				System.out.print("You start running away from the zombies but because of the wounds you have received from the bear trap the zombies keep getting closer and closer as you try and get away. You see a old cottage as you are running. Do you: \nA)Run inside the cottage\nB)Run past the cottage\nC)Try to see inside the cottage through the windows");
-				if (choice.toUpperCase().equals("A"))
-				{
-					System.out.print("You run inside the cottage slamming the door behind you locking the door and collapsing at it in pain. You look around and the cottage looks completely empty. You try to get up to search the cottage but you end up passing out from too much blood loss. You wake up and you are in a bed with your leg bandaged. You try to get up but it hurts to much to stand. You see that a person is coming to the door but you can't see who it is. Do you\nA)Grab the pair of scissors that are beside your bed and throw them at the person\nB)Just lay in the bed and hope the person is friendly ");
-					if (choice.toUpperCase().equals("A"))
-					{
-						System.out.print("You grab the scissors and get ready to throw them. As the person is walking you throw the scissors before you can see his face. The scissors land right in his chest. You think it was a great throw until you notice that the man was your best friend Marty B");
-					}
-					else if (choice.toUpperCase().equals("B"))
-					{
-						System.out.print("");
-					}
-				}
-				else if (choice.toUpperCase().equals("B"))
-				{
-					System.out.print("You run past the cottage and try to outrun the zombies even though you are bleeding from your wounds. You keep running but the pain in your leg is to great to keep moving on in. you end up collapsing to the ground in pain and get overtaken by zombies. YOU DIE");
-					quit();
-				}
-				else if (choice.toUpperCase().equals("C"))
-				{
-					System.out.print("You run to the window to try and see in well the zombies are still after you and you see that the house looks like it's abandoned so you start walking to the door. As you are going to the door a zombie crawls out from under the cottage knocking you to the ground and you hit your head off of a rock. YOU DIE");
-					quit();
-				}
-			}
-			else if (choice.toUpperCase().equals("B")) 
-			{
-				System.out.print("You climb up the tree as high as you can and sit on one of the larger branches being as quiet as you can. The herd walk past you and doesn't even notice that you’re there.");
-			}
-			else if (choice.toUpperCase().equals("C")) 
-			{
-				System.out.print("You get ready to fight as the zombies are coming closer and as the first zombie gets to you you hit it as hard as you can with the trap. The trap gets stuck in the zombie and you can't get it out to fight. You leave it and start fighting with your hands throwing zombies to the ground as they come. As you are fighting you notice that the zombies have surrounded you and there is no way out.You hit one zombie but another tackles you to the ground and then they are all on top of you and they start eating you alive. YOU DIE");
-				quit();
-			}
-		}
-		else if (choice.toUpperCase().equals("D"))
-		{
-			System.out.print("If you choose D, you get out of your truck and look around for a weapon to help you fight off the zombies. \nOn the ground you see three items: \nA)A small knife that is covered in blood and stuck to a nearby tree\nB)A handgun that is in a bush but you don’t know if it is loaded\nC)A old broom stick that is sharpened at one end");
-			choice=input.next();
-			if (choice.toUpperCase().equals("A"))
-			{
-				System.out.print("You run as fast as you can to the tree to pull the knife out but you are seen by one of the nearby zombies. You try to pull the knife out but it is stuck so you pull as hard as you can ripping the knife out but as you do your arm swings back and hitting one of the zombies in the head with a knife. As you kill one zombie another zombie crawling on the ground bites you leg turning you into a zombie you killing you. YOU DIE");
-			}
-			else if (choice.toUpperCase().equals("B"))
-			{
-				System.out.print("You run to the bush to grab the gun but as you get closer you realize that the gun is in the hands of a dead zombie. You end up peeling the gun out of the dead man's hand and check to see if there are any bullets in the gun. the gun ends up only having 1 bullet. Do you: \nA)Put the gun in your mouth and end it before the zombies can\nB)Try and run through the hurd and only shoot if you need to");
-				if (choice.toUpperCase().equals("A"))
-				{
-					System.out.println("YOU DIE");
-					quit();
-				}
-				else if (choice.toUpperCase().equals("B"))
-				{
-					System.out.println("You run as fast as you can at the hurd dodging zombies left and right. You are in the middle of the hurd and look for a way out but you are surrounded by zombies you shoot one but as you do another one bites you YOU DIE");
-					quit();
-				}
-			}
-			else if (choice.toUpperCase().equals("C"))
-			{
-				System.out.println("You grab the broomstick and start moving towards the herd of zombies. You kill the first one that comes at you and then the second. Then you start running through the zombies killing as many as you can as you go through but the stick ends up breaking as you are going and you are surrounded by zombies. You look around for help but you don't see anyone or anything and you realize that it is over. YOU DIE.");
-				quit();
-			}
-		}
-		
-		}while(choice.toUpperCase().equals("A")||(choice.toUpperCase().equals("B"))||(choice.toUpperCase().equals("C"))||(choice.toUpperCase().equals("D")));// loop continues as long as user enters A B C or D
+			new Game();
 	}
-	//declare quit method
-	public static void quit()
-	{String answer="";
-	System.out.println("Do you want to play again (y/n)?"); 
-	answer=input.next();
-	if (answer.toLowerCase().equals("y"))//converts choice to lower case
-	{return;/*returns to main method*/}
-	else if (answer.toLowerCase().equals("n"))
-	{System.out.println("Goodbye");
-	 System.exit(0);/*exits program*/}
-   	}
-}
+	
+	public Game(){
+		
+		window = new JFrame();//Panel initialization 
+		window.setSize(1280,720);//Size of window
+		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//Able to close program
+		window.getContentPane().setBackground(Color.black);//Colour of window
+		window.setLayout(null);//Disable default layout for game
+		window.setVisible(true);//To see the window
+		con = window.getContentPane();//Base layer
+		
+		titleNamePanel = new JPanel();//Panel initialization 
+		titleNamePanel.setBounds(330, 100, 650, 150);//Size and location of panel
+		titleNamePanel.setBackground(Color.black);//Colour of panel
+		titleNameLabel = new JLabel("Zombie Apocalypse");//Text for title to be placed on panel
+		titleNameLabel.setForeground(Color.white);//Colour of Text
+		titleNameLabel.setFont(titleFont);//Apply font to text
+		
+		startButtonPanel = new JPanel();//Initialization of button frame
+		startButtonPanel.setBounds(530, 400, 200, 100);//Size and location of button frame
+		startButtonPanel.setBackground(Color.black);//Colour of button frame
+		startButton = new JButton("Begin Game");//Button initialization 
+		startButton.setBackground(Color.black);//Colour of button background
+		startButton.setForeground(Color.white);//Colour of text on top of button
+		startButton.setFont(normalFont);//Apply font to button text
+		startButton.addActionListener(tsHandler);//Forwards to "TitleScreenHandler" ActionListener when button is clicked
+		startButton.setFocusPainted(false);//Disable button focus
+		//Alternate way to remove focus: "startButton.setFocusable(false);"
+		
+		titleNamePanel.add(titleNameLabel);//Place text on Panel
+		startButtonPanel.add(startButton);//Place button on panel
+		
+		con.add(titleNamePanel);//Add panel to container, (Text panel Layer)
+		con.add(startButtonPanel);//Add panel to container, (Button layer)
+		window.setVisible(true);//To see the window
+	}
+	
+	public void createGameScreen(){
+		
+		titleNamePanel.setVisible(false);//Disables this panel when createGameScreen is called
+		startButtonPanel.setVisible(false);//Disables this panel when createGameScreen is called
+		mainTextPanel = new JPanel();//Text panel initialization 
+		mainTextPanel.setBounds(80, 100, 1150, 250);//Size and location of panel
+		mainTextPanel.setBackground(Color.black);//Colour of panel
+		mainTextPanel.setOpaque(false);//Set panel to transparent
+		con.add(mainTextPanel);//Add panel to container, (Text panel Layer)
+		
+		mainTextArea = new JTextArea();//Initializes placement for text
+		mainTextArea.setBounds(100, 100, 1150, 250);//Size and location of area
+		mainTextArea.setOpaque(false);//Set panel to transparent
+		mainTextArea.setForeground(Color.white);//Colour of text in area
+		mainTextArea.setFont(normalFont);//Apply font to text
+		mainTextArea.setLineWrap(true);//Apply a text wrap function
+		mainTextArea.setWrapStyleWord(true);//Apply a specific (word) text wrap function
+		mainTextPanel.add(mainTextArea);//Add text area to Text panel, (Text area layer)
+		
+		choiceButtonPanel = new JPanel();//Initialization of button frame
+		choiceButtonPanel.setBounds(210, 350, 800, 250);//Size and location of panel
+		choiceButtonPanel.setOpaque(false);//Set panel to transparent
+		choiceButtonPanel.setLayout(new GridLayout(4,1));//Formats buttons to four individual rows
+		con.add(choiceButtonPanel);//Add panel to container, (Button layer)
+		
+		choice1 = new JButton("Choice 1");//Button initialization
+		choice1.setOpaque(false);//Set button to transparent
+		choice1.setForeground(Color.black);//Colour of text on top of button
+		choice1.setFont(normalFont);//Apply font to text on button
+		choice1.setFocusPainted(false);//Disable button focus
+		choice1.addActionListener(choiceHandler);//Forwards to "ChoiceHandler" ActionListener when button is clicked
+		choice1.setActionCommand("c1");//Identifies to program which specific choice this button correlates to
+		choiceButtonPanel.add(choice1);//Add Button on panel
+		
+		choice2 = new JButton("Choice 2");//Button initialization
+		choice2.setOpaque(false);//Set button to transparent
+		choice2.setForeground(Color.black);//Colour of text on top of button
+		choice2.setFont(normalFont);//Apply font to text on button
+		choice2.setFocusPainted(false);//Disable button focus
+		choice2.addActionListener(choiceHandler);//Forwards to "ChoiceHandler" ActionListener when button is clicked
+		choice2.setActionCommand("c2");//Identifies to program which specific choice this button correlates to
+		choiceButtonPanel.add(choice2);//Add Button on panel
+		
+		choice3 = new JButton("Choice 3");//Button initialization
+		choice3.setOpaque(false);//Set button to transparent
+		choice3.setForeground(Color.black);//Colour of text on top of button
+		choice3.setFont(normalFont);//Apply font to text on button
+		choice3.setFocusPainted(false);//Disable button focus
+		choice3.addActionListener(choiceHandler);//Forwards to "ChoiceHandler" ActionListener when button is clicked
+		choice3.setActionCommand("c3");//Identifies to program which specific choice this button correlates to
+		choiceButtonPanel.add(choice3);//Add Button on panel
+		
+		choice4 = new JButton("Choice 4");//Button initialization
+		choice4.setOpaque(false);//Set button to transparent
+		choice4.setForeground(Color.black);//Colour of text on top of button
+		choice4.setFont(normalFont);//Apply font to text on button
+		choice4.setFocusPainted(false);//Disable button focus
+		choice4.addActionListener(choiceHandler);//Forwards to "ChoiceHandler" ActionListener when button is clicked
+		choice4.setActionCommand("c4");//Identifies to program which specific choice this button correlates to
+		choiceButtonPanel.add(choice4);//Add Button on panel
+		
+		hpPanel = new JPanel();
+		hpPanel.setBounds(300, 20, 800, 50);//Size and location of panel
+		hpPanel.setOpaque(false);//Set panel to transparent
+		hpPanel.setBackground(Color.black);//Colour of panel
+		hpPanel.setLayout(new GridLayout(1,4));//Layout of panel to four columns
+		con.add(hpPanel);//Add panel to container
+		
+		weaponPanel = new JPanel();
+		weaponPanel.setBounds(640, 20, 800, 50);//Size and location of panel
+		weaponPanel.setOpaque(false);//Set panel to transparent
+		weaponPanel.setBackground(Color.black);//Colour of panel
+		weaponPanel.setLayout(new GridLayout(1,4));//Layout of panel to four columns
+		con.add(weaponPanel);//Add panel to container
+		
+		playerPanel = new JPanel();//Panel initialization to hold player information
+		playerPanel.setBounds(370, 20, 800, 50);//Size and location of panel
+		playerPanel.setOpaque(false);//Set panel to transparent
+		playerPanel.setBackground(Color.black);//Colour of panel
+		playerPanel.setLayout(new GridLayout(1,4));//Layout of panel to four columns
+		con.add(playerPanel);//Add panel to container
+		
+		hpLabel = new JLabel("HP:");//Text for HP label to be placed
+		hpLabel.setFont(normalFont);//Font selection
+		hpLabel.setForeground(Color.white);//Font colour
+		hpPanel.add(hpLabel);//Add HP text to  panel
+		
+		hpLabelNumber = new JLabel();//Text for HP value to be placed
+		hpLabelNumber.setFont(normalFont);//Font selection
+		hpLabelNumber.setForeground(Color.white);//Font colour
+		playerPanel.add(hpLabelNumber);//Add label to panel
+		
+		weaponLabel = new JLabel("Weapon:");//Text for weapon label to be placed
+		weaponLabel.setFont(normalFont);//Font selection
+		weaponLabel.setForeground(Color.white);//Font colour
+		weaponPanel.add(weaponLabel);//Add label to panel
+		
+		weaponLabelName = new JLabel();//Text for weapon name to be placed
+		weaponLabelName.setFont(normalFont);//Font selection
+		weaponLabelName.setForeground(Color.white);//Font colour
+		playerPanel.add(weaponLabelName);//Add label to panel
+		
+		imagePanel = new JPanel();
+		imagePanel.setBounds(1, 1, 1280, 720);
+		imagePanel.setBackground(Color.white);
+		
+		imageLabel = new JLabel();
+		
+		image = new ImageIcon(".//res//dforest.jpg");
+		
+		imageLabel.setIcon(image);
+		imagePanel.add(imageLabel);
+		
+		con.add(imagePanel);
+		
+		playerSetup();//Directs program to playerSetup method
+		
+	}
+	public void playerSetup(){//Initializes the playerSetup method
+		playerHP = 100;//Set initial player's HP
+		zombieHP = 100;//Set initial enemy's HP
+		weapon = "Machete";//Set initial player's weapon
+		weaponLabelName.setText(weapon);//Display weapon text on label
+		hpLabelNumber.setText("" + playerHP);//Display integer HP value
+		
+		
+		mainScreen();//Directs to main method
+	}
+	public void mainScreen()
+	{//Initializes the playerSetup method
+		playerPanel.validate();//Refreshes the panel
+		playerPanel.repaint();//Tells program that panel needs refreshing
+		choice2.setVisible(false);//Sets the buttons to invisible
+		choice3.setVisible(false);//Sets the buttons to invisible
+		choice4.setVisible(false);//Sets the buttons to invisible
+		position = "mainScreen";//Indication of which method is currently running
+		mainTextArea.setText("You are on a truck going to your best friend, Marty B’s,"
+				+ "house  when you look out your driver's window to see something weird. "
+				+ "You stop your truck to go out and see what it is and you notice that it is a humanoid figure in the woods."
+				+ "You go to see if he is alright when you notice a foul smell and then see his literal dead stare looking right into your eyes, "
+				+ "you see that he has a large piece of his shoulder bitten off with a disgusting amount of exposed skin. "
+				+ "You ask him what happened but he only answers with a moan.You continue to stare back at the figure, then out of nowhere he attacks. ");//Placement for text
+		choice1.setText("Continue");//Display text on button
+		choice2.setText("");//Display text on button
+		choice3.setText("");//Display text on button
+		choice4.setText("");//Display text on button
+	}
+	public void mainScreencont()
+	{//Initializes the playerSetup method
+		playerPanel.validate();//Refreshes the panel
+		playerPanel.repaint();//Tells program that panel needs refreshing
+		choice2.setVisible(true);//Sets the buttons to invisible
+		choice3.setVisible(true);//Sets the buttons to invisible
+		choice4.setVisible(true);//Sets the buttons to invisible
+		position = "mainScreencont";//Indication of which method is currently running
+		mainTextArea.setText(" He starts running at you with that same dead stare locked onto you as his mouth is wide open."
+				+ " You run as fast as you can back to your truck, lock the door and speed away with no hesitation."
+				+ " When you are in the truck you keep asking yourself what that guy was doing,"
+				+ " then you realize that even though you never thought the day would come,"
+				+ " you realize that the world has gone into a ZOMBIE APOCALYPSE."
+				+ " You keep driving to Marty B’s house that is just 10 minutes away and you see that the road is blocked by hundreds of humanoid figures"
+				+ " similarly to the one that tried to eat you earlier."
+				+ " You step on the brakes before getting any closer and…..You have to make a choice now, do you:");//Placement for text
+		choice1.setText("Try to drive through the zombies");//Display text on button
+		choice2.setText("Turn your truck around and try to find a different route");//Display text on button
+		choice3.setText("Get out of your car and try to make it on foot by walking around the big mob");//Display text on button
+		choice3.setFont(choiceFont);
+		choice4.setText(" Try to fight through the zombies ");//Display text on button 
+	}
+		public void drivetru()
+		{//Initializes the playerSetup method
+			playerPanel.validate();//Refreshes the panel
+			playerPanel.repaint();//Tells program that panel needs refreshing
+			choice2.setVisible(true);//Sets the buttons to invisible
+			choice3.setVisible(true);//Sets the buttons to invisible
+			choice4.setVisible(true);//Sets the buttons to invisible
+			position = "drivetru";//Indication of which method is currently running
+			mainTextArea.setText("You stomp on the gas peddle as hard as you can and try to bust through the zombies."
+					+ " You manage to get out the other end but they end up ripping out the exhaust pipe and part of the  hood."
+					+ " Do you:");//Placement for text
+			choice1.setText("Keep on driving for as long as you can ");//Display text on button
+			choice2.setText("Hold up in your truck hoping someone comes that can rescue you ");//Display text on button
+			choice3.setText("Leave your truck and walk on foot");//Display text on button
+			choice3.setFont(choiceFont);
+			choice4.setText("Try and find parts for your truck");//Display text on button 
+		}
+			public void drivecont()
+			{//Initializes the playerSetup method
+				playerPanel.validate();//Refreshes the panel
+				playerPanel.repaint();//Tells program that panel needs refreshing
+				choice2.setVisible(true);//Sets the buttons to invisible
+				choice3.setVisible(true);//Sets the buttons to invisible
+				choice4.setVisible(true);//Sets the buttons to invisible
+				position = "drivecont";//Indication of which method is currently running
+				mainTextArea.setText("You keep driving for as long as you can towards Marty's house."
+						+ " As you are driving you notice that your gas tank is also leaking so you stomp on the gas so you can use as much gas as you can well it is in your tank."
+						+ " As you hit the gas the dangling exhaust pipe starts to spark and catches the dripping gas on fire."
+						+ " The flames are starting to cover the car and before you can do anything the car blows up. YOU DIE"
+						+ "Do you want to play again?");//Placement for text
+				choice1.setText("Yes");//Display text on button
+				choice2.setText("No");//Display text on button
+				choice3.setText("");//Display text on button
+				choice3.setFont(choiceFont);
+				choice4.setText("");//Display text on button 
+			}
+			public void holdup()
+			{//Initializes the playerSetup method
+				playerPanel.validate();//Refreshes the panel
+				playerPanel.repaint();//Tells program that panel needs refreshing
+				choice2.setVisible(true);//Sets the buttons to invisible
+				choice3.setVisible(true);//Sets the buttons to invisible
+				choice4.setVisible(true);//Sets the buttons to invisible
+				position = "holdup";//Indication of which method is currently running
+				mainTextArea.setText("You decide to lock your doors and you figure out that you have enough food and water for only 2 days."
+						+ " 2 days pass and you stay in one spot but the only thing that is coming towards you is zombies and not help. "
+						+ " As you hit the gas the dangling exhaust pipe starts to spark and catches the dripping gas on fire."
+						+ " You have ran out of food and water but at this point you are completely surrounded by zombies and you realize you no matter what you do you won't make it out. YOU DIE"
+						+ " Do you want to play again?");//Placement for text
+				choice1.setText("Yes");//Display text on button
+				choice2.setText("No");//Display text on button
+				choice3.setText("");//Display text on button
+				choice3.setFont(choiceFont);
+				choice4.setText("");//Display text on button 
+			}
+			public void walk()
+			{//Initializes the playerSetup method
+				playerPanel.validate();//Refreshes the panel
+				playerPanel.repaint();//Tells program that panel needs refreshing
+				choice2.setVisible(true);//Sets the buttons to invisible
+				choice3.setVisible(true);//Sets the buttons to invisible
+				choice4.setVisible(true);//Sets the buttons to invisible
+				position = "walk";//Indication of which method is currently running
+				mainTextArea.setText("You leave your truck and follow the road away from the zombies."
+						+ " You walk for an hour before you can see the town your friend lives in."
+						+ " As you look at the town you can’t see anyone anywhere in the town. Do you:");//Placement for text
+				choice1.setText("Keep walking and pass the town you friend lives in");//Display text on button
+				choice2.setText("Walk into the town and look for your friend");//Display text on button
+				choice3.setText("");//Display text on button
+				choice3.setFont(choiceFont);
+				choice4.setText("");//Display text on button 
+			}
+				public void walkcont()
+				{//Initializes the playerSetup method
+					playerPanel.validate();//Refreshes the panel
+					playerPanel.repaint();//Tells program that panel needs refreshing
+					choice2.setVisible(true);//Sets the buttons to invisible
+					choice3.setVisible(true);//Sets the buttons to invisible
+					choice4.setVisible(true);//Sets the buttons to invisible
+					position = "walkcont";//Indication of which method is currently running
+					mainTextArea.setText("You walk past the town to search for your friends Marty B."
+							+ " As you are walking you notice that there is a zombie on the road in front out you."
+							+ " As you get closer to the zombie you notice that it is your best friend Marty B."
+							+ " He notices you and starts to come towards you and you have to make a choice. Do you:");//Placement for text
+					choice1.setText("Kill your friend because he has turned into a zombie.");//Display text on button
+					choice2.setText("Run away from him but leave him be.");//Display text on button
+					choice3.setText("");//Display text on button
+					choice3.setFont(choiceFont);
+					choice4.setText("");//Display text on button 
+				}
+					public void attack()
+					{//Initializes the playerSetup method
+						playerPanel.validate();//Refreshes the panel
+						playerPanel.repaint();//Tells program that panel needs refreshing
+						choice2.setVisible(true);//Sets the buttons to invisible
+						choice3.setVisible(true);//Sets the buttons to invisible
+						choice4.setVisible(true);//Sets the buttons to invisible
+						position = "attack";//Indication of which method is currently running
+						mainTextArea.setText("As you are approaching Marty you pull out your (Insert Weapon) And go to hit him."
+								+ " With one fast strike to the head you kill him making him fall to the ground. "
+								+ " You leave your friend on the ground and walk away. "
+								+ " As you are walking you realize that you have no one left and you are all alone."
+								+ " You keep walking down the road till you reach a town."
+								+ " You are very hungry and tired from walking all day you do into the town and look down the streets to see a pack of 5 zombies Do you:");//Placement for text
+						choice1.setText("");//Display text on button
+						choice2.setText("");//Display text on button
+						choice3.setText("");//Display text on button
+						choice3.setFont(choiceFont);
+						choice4.setText("");//Display text on button 
+					}
+					public void leave()
+					{//Initializes the playerSetup method
+						playerPanel.validate();//Refreshes the panel
+						playerPanel.repaint();//Tells program that panel needs refreshing
+						choice2.setVisible(true);//Sets the buttons to invisible
+						choice3.setVisible(true);//Sets the buttons to invisible
+						choice4.setVisible(true);//Sets the buttons to invisible
+						position = "leave";//Indication of which method is currently running
+						mainTextArea.setText(""
+								+ ""
+								+ ""
+								+ ""
+								+ ""
+								+ "");//Placement for text
+						choice1.setText("");//Display text on button
+						choice2.setText("");//Display text on button
+						choice3.setText("");//Display text on button
+						choice3.setFont(choiceFont);
+						choice4.setText("");//Display text on button 
+					}
+
+			
+	public class TitleScreenHandler implements ActionListener{//Interface for receiving an action event (Button press)
+		
+		public void actionPerformed(ActionEvent event){//Indicates that an action has occurred
+			
+			createGameScreen();//This is called after action has been detected
+	  }
+   }
+	public class ChoiceHandler implements ActionListener{//Interface for receiving an action event (Button press)
+		
+		public void actionPerformed(ActionEvent event){//Indicates that an action has occurred
+			
+			String yourChoice = event.getActionCommand();//Recognizes which choice button is clicked
+			
+			switch(position){//Determines which method is being processed
+			case "mainScreen"://Indicates which method is being processed
+				switch(yourChoice){//Determines which choice button was clicked
+				case "c1": mainScreencont(); break;//Result of choice 1 button click
+				} 
+				break;
+			case "mainScreencont"://Indicates which method is being processed
+				switch(yourChoice){//Determines which choice button was clicked
+				case "c1":  drivetru(); break;//Result of choice 1 button click
+				case "c2":  diffroute();break;//Result of choice 2 button click
+				case "c3":  mobwalk();break;//Result of choice 3 button click
+				case "c4":  fight();break;//Result of choice 4 button click
+				} 
+				break;
+				case "drivetru"://Indicates which method is being processed
+					switch(yourChoice){//Determines which choice button was clicked
+					case "c1": drivecont(); break;//Result of choice 1 button click
+					case "c2": holdup();break;//Result of choice 2 button click
+					case "c3":  walk();break;//Result of choice 3 button click
+					case "c4":  parts();break;//Result of choice 4 button click
+					} 
+					break;
+					case "drivecont"://Indicates which method is being processed
+						switch(yourChoice){//Determines which choice button was clicked
+						case "c1": return;//Result of choice 1 button click
+						case "c2": System.exit(0);break;//Result of choice 2 button click
+						} 
+						break;
+					case "holdup"://Indicates which method is being processed
+						switch(yourChoice){//Determines which choice button was clicked
+						case "c1": return;//Result of choice 1 button click
+						case "c2":  System.exit(0);break;//Result of choice 2 button click
+						}
+						break;
+					case "walk"://Indicates which method is being processed
+						switch(yourChoice){//Determines which choice button was clicked
+						case "c1": walkcont(); break;//Result of choice 1 button click
+						case "c2":  holdup();break;//Result of choice 2 button click
+						}
+						break;
+						case "walkcont"://Indicates which method is being processed
+							switch(yourChoice){//Determines which choice button was clicked
+							case "c1": attack(); break;//Result of choice 1 button click
+							case "c2":  leave();break;//Result of choice 2 button click
+							}
+							break;
+			
+				}
+			}
+		}
+	}
